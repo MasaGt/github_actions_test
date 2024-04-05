@@ -8,17 +8,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.0.0
-
       - name: Set Node.js 12.x
         uses: actions/setup-node@v1.3.0
         with:
           node-version: 12.x
-
       - name: Clean install dependencies
         run: npm ci
-
       - name: Test
-        run: npm run test
+        run: npm test
 
   lint:
     name: Lint
@@ -26,14 +23,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.0.0
-
       - name: Set Node.js 12.x
         uses: actions/setup-node@v1.3.0
         with:
           node-version: 12.x
-
       - name: Clean install dependencies
         run: npm ci
-
       - name: Lint
         run: npm run lint
